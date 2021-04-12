@@ -4,19 +4,22 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Pasok;
+use App\Models\{Buku, Pasok, Distributor};
 
 class PasokController extends Controller
 {
     public function index()
     {
-        $pasok = Pasok::latest()->get();
-        return view('admin.pasok.index', compact('pasok'));
+        $pasok = Pasok::with('namaDistributor', 'kodeBuku')->latest()->get();
+        $distributor = Distributor::orderBy('nama_distributor', 'ASC')->get();
+        $buku = Buku::orderBy('judul', 'ASC')->get();
+        return view('admin.pasok.index', compact('pasok', 'buku', 'distributor'));
     }
 
     public function store(Request $request)
     {
         $request->validate([
+            'kode_pasok' => 'required',
             'id_distributor' => 'required',
             'id_buku' => 'required',
             'jumlah' => 'required',

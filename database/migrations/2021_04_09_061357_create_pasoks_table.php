@@ -15,6 +15,7 @@ class CreatePasoksTable extends Migration
     {
         Schema::create('pasoks', function (Blueprint $table) {
             $table->id();
+            $table->string('kode_pasok');
             $table->string('id_distributor');
             $table->string('id_buku');
             $table->integer('jumlah');

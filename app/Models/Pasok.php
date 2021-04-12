@@ -9,6 +9,13 @@ class Pasok extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'id_distributor', 'id_buku', 'jumlah', 'tanggal'
+        'kode_pasok', 'id_distributor', 'id_buku', 'jumlah', 'tanggal'
     ];
+
+    public function namaDistributor() {
+        return $this->belongsTo(Distributor::class, 'id_distributor');
+    }
+    public function kodeBuku() {
+        return $this->belongsTo(Buku::class, 'id_buku');
+    }
 }
