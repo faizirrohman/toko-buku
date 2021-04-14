@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\Admin\{DashboardController, BukuController, DistributorController, PasokController};
+use App\Http\Controllers\Manager\DashboardController as ManagerDashboardController;
+use App\Http\Controllers\Manager\{SettingLaporanController};
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -46,6 +48,19 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('/edit/{id}', [PasokController::class, 'edit'])->name('edit');
         Route::put('/update/{id}', [PasokController::class, 'update'])->name('update');
         Route::delete('/delete/{id}', [PasokController::class, 'destroy'])->name('destroy');
+    });
+});
+
+// MANAGER
+Route::prefix('manager')->name('manager.')->group(function () {
+    Route::get('/dashboard', [ManagerDashboardController::class, 'index'])->name('dashboard');
+
+    Route::prefix('/setting-laporan')->name('setting-laporan.')->group(function () {
+        Route::get('/index', [SettingLaporanController::class, 'index'])->name('index');
+        Route::post('/store', [SettingLaporanController::class, 'store'])->name('store');
+        Route::get('/edit/{id}', [SettingLaporanController::class, 'edit'])->name('edit');
+        Route::put('/update/{id}', [SettingLaporanController::class, 'update'])->name('update');
+        Route::delete('/delete/{id}', [SettingLaporanController::class, 'destroy'])->name('destroy');
     });
 });
 
