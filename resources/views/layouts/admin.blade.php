@@ -48,10 +48,23 @@
                                     </ul>
                               </li>
                         </ul>
-                        <form class="d-flex">
-                              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                              <button class="btn btn-outline-success" type="submit">Search</button>
-                        </form>
+                  </div>
+                  <div class="dropdown">
+                        <a class="nav-link dropdown-toggle text-white d-flex align-items-center" href="#" id="dropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              <div class="pr-4 font-13 font-w400">Noer Faizir Rohman</div>
+                              <img style="width: 40px; height: 40px;" src="{{ asset('profile.svg') }}" alt="">
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                              <li>
+                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#editProfile"><i class="kejar-profile"></i> Ganti Foto Profil</a>
+                              </li>
+                              <li>
+                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#updatePassword"><i class="kejar-password"></i> Ganti Password</a>
+                              </li>
+                              <li>
+                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logout"><i class="kejar-log-out"></i> Log Out</a>
+                              </li>
+                        </ul>
                   </div>
             </div>
       </nav>
