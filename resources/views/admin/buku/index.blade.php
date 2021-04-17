@@ -22,21 +22,21 @@
             <div class="col-md-12">
                   <div class="main-card mb-3 card card-body">
                         <div class="table-responsive">
-                              <table class="align-middle mb-0 table table-borderless table-striped table-hover" id="myTable">
+                              <table class="table table-hover" id="myTable">
                                     <thead>
                                           <tr>
                                                 <th>No</th>
                                                 <th>Kode Buku</th>
                                                 <th>Judul</th>
-                                                <th>No ISBN</th>
+                                                <th>NO ISBN</th>
                                                 <th>Penulis</th>
                                                 <th>Penerbit</th>
                                                 <th>Tahun</th>
                                                 <th>Stok</th>
                                                 <th>Harga Pokok</th>
                                                 <th>Harga Jual</th>
-                                                <th>PPN(%)</th>
-                                                <th>Diskon(%)</th>
+                                                <th>PPN</th>
+                                                <th>Diskon</th>
                                                 <th>Aksi</th>
                                           </tr>
                                     </thead>
@@ -115,8 +115,8 @@
                                           <input type="text" name="penerbit" class="form-control" id="penerbit" required>
                                     </div>
                                     <div class="mb-3 col-md-6">
-                                          <label for="tahun" class="form-label">Tahun</label>
-                                          <input type="text" class="form-control" name="tahun" id="tahun" required>
+                                          <label for="tahun" class="form-label">Tahun Terbit</label>
+                                          <input type="number" class="form-control" name="tahun" id="tahun" required>
                                     </div>
                               </div>
 

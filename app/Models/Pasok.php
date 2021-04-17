@@ -9,7 +9,7 @@ class Pasok extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'kode_pasok', 'id_distributor', 'id_buku', 'jumlah', 'tanggal'
+        'id_distributor', 'id_buku', 'jumlah', 'tanggal'
     ];
 
     public function namaDistributor() {

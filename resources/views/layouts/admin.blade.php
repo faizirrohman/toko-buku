@@ -26,7 +26,12 @@
                                           <li><a class="dropdown-item" href="{{ route('admin.distributor.index') }}">Distributor</a></li>
                                           <li><hr class="dropdown-divider"></li>
                                           <li><a class="dropdown-item" href="{{ route('admin.buku.index') }}">Buku</a></li>
-                                          <li><hr class="dropdown-divider"></li>
+                                    </ul>
+                              </li>
+                              <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                          Tambah</a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                           <li><a class="dropdown-item" href="{{ route('admin.pasok.index') }}">Pasok</a></li>
                                     </ul>
                               </li>
@@ -34,7 +39,7 @@
                                     <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                           Laporan</a>
                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                          <li><a class="dropdown-item" href="#">Semua Data Buku</a></li>
+                                          <li><a class="dropdown-item" href="{{ route('admin.laporan.semua-data-buku.index') }}">Semua Data Buku</a></li>
                                           <li><hr class="dropdown-divider"></li>
                                           <li><a class="dropdown-item" href="#">Filter Penulis Buku</a></li>
                                           <li><hr class="dropdown-divider"></li>

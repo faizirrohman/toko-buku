@@ -26,7 +26,6 @@
                                     <thead>
                                           <tr>
                                                 <th>No</th>
-                                                <th>Kode Pasok</th>
                                                 <th>Nama Distributor</th>
                                                 <th>Judul Buku</th>
                                                 <th>Jumlah</th>
@@ -38,7 +37,6 @@
                                           @foreach($pasok as $items)
                                           <tr>
                                                 <td>{{ $loop->iteration }}</td>
-                                                <td>{{ $items->kode_pasok }}</td>
                                                 <td>{{ $items->namaDistributor['nama_distributor'] }}</td>
                                                 <td>{{ $items->kodeBuku['judul'] }}</td>
                                                 <td>{{ $items->jumlah }}</td>
@@ -78,10 +76,6 @@
                         <div class="modal-body">
                               <div class="row">
                                     <div class="mb-3 col-md-6">
-                                          <label for="kode_pasok" class="form-label">Kode Pasok</label>
-                                          <input type="text" class="form-control" name="kode_pasok" id="kode_pasok" required>
-                                    </div>
-                                    <div class="mb-3 col-md-6">
                                           <label for="id_distributor" class="form-label">Nama Distributor</label>
                                           <select name="id_distributor" class="form-select" id="id_distributor" required>
                                                 <option>Pilih</option>
@@ -90,8 +84,6 @@
                                                 @endforeach
                                           </select>
                                     </div>
-                              </div>
-                              <div class="row">
                                     <div class="mb-3 col-md-6">
                                           <label for="id_buku" class="form-label">Judul Buku</label>
                                           <select name="id_buku" class="form-select" id="id_buku" required>
@@ -101,15 +93,14 @@
                                                 @endforeach
                                           </select>
                                     </div>
+                              </div>
+                              <div class="row">
                                     <div class="mb-3 col-md-6">
                                           <label for="jumlah" class="form-label">Jumlah</label>
             
                                           <input type="number" class="form-control" name="jumlah" id="jumlah" required>
                                     </div>
-                              </div>
-
-                              <div class="row">
-                                    <div class="mb-3 col-md-12">
+                                    <div class="mb-3 col-md-6">
                                           <label for="tanggal" class="form-label">Tanggal</label>
                                           <input type="date" name="tanggal" class="form-control" id="tanggal" required>
                                     </div>

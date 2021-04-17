@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Admin\{DashboardController, BukuController, DistributorController, PasokController};
+use App\Http\Controllers\Admin\{DashboardController, BukuController, DistributorController, LaporanController, PasokController, PrintController};
 use App\Http\Controllers\Manager\DashboardController as ManagerDashboardController;
 use App\Http\Controllers\Manager\{SettingLaporanController};
 use Illuminate\Support\Facades\Route;
@@ -48,6 +48,13 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('/edit/{id}', [PasokController::class, 'edit'])->name('edit');
         Route::put('/update/{id}', [PasokController::class, 'update'])->name('update');
         Route::delete('/delete/{id}', [PasokController::class, 'destroy'])->name('destroy');
+    });
+
+    Route::prefix('/laporan')->name('laporan.')->group(function () {
+        Route::prefix('/semua-data-buku')->name('semua-data-buku.')->group(function () {
+            Route::get('/index', [LaporanController::class, 'semuaDataBuku'])->name('index');
+            Route::get('/print', [PrintController::class, 'semuaDataBuku'])->name('print');
+        });
     });
 });
 

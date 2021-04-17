@@ -19,7 +19,6 @@ class PasokController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'kode_pasok' => 'required',
             'id_distributor' => 'required',
             'id_buku' => 'required',
             'jumlah' => 'required',
