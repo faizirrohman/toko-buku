@@ -54,6 +54,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::prefix('/semua-data-buku')->name('semua-data-buku.')->group(function () {
             Route::get('/index', [LaporanController::class, 'semuaDataBuku'])->name('index');
             Route::get('/print', [PrintController::class, 'semuaDataBuku'])->name('print');
+            Route::get('/export-excel', [BukuController::class, 'bukuExport'])->name('export');
         });
     });
 });

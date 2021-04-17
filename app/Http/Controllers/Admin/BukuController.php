@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Exports\BukuExport;
+use Maatwebsite\Excel\Facades\Excel;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Buku;
@@ -12,6 +14,10 @@ class BukuController extends Controller
     {
         $buku = Buku::latest()->get();
         return view('admin.buku.index', compact('buku'));
+    }
+
+    public function bukuExport() {
+        return Excel::download(new BukuExport, 'Laporan Semua Data Buku.xlsx');
     }
 
     public function store(Request $request)

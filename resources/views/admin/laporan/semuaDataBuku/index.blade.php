@@ -11,7 +11,7 @@
                         <tr>
                               <th>
                                     <a target="blank" href="{{ route('admin.laporan.semua-data-buku.print') }}" class="btn btn-primary" style="width: 70px;">Cetak</a>
-                                    <a target="blank" href="#" class="btn btn-success" style="width: 120px;">Export Excel</a>
+                                    <a href="{{ route('admin.laporan.semua-data-buku.export') }}" class="btn btn-success" style="width: 120px;">Export Excel</a>
                               </th>
                         </tr>
                         
